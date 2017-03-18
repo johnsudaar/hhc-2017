@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if user
       render json: user
     else
-      render json: {:error => "Invalid credentials"}
+      render json: {:error => "Invalid credentials"}, status: 418
     end
   end
 
