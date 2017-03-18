@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails_12factor'
 gem 'haml'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'rack-cors', :require => 'rack/cors'
+
