@@ -1,5 +1,5 @@
 class EntitiesController < ApplicationController
-  
+
   def index
     entities = Entity.all
     render json:entities
@@ -35,7 +35,7 @@ class EntitiesController < ApplicationController
   def nearest
     longitude = params[:longitude].to_f
     latitude = params[:latitude].to_f
-    user_coord = [latitude, longitude];
+    user_coord = [latitude, longitude]
     entities = Entity.all
 
     flying_distance = -1
@@ -43,7 +43,7 @@ class EntitiesController < ApplicationController
     entities.each do | entity |
       eLongitude = entity.longitude
       eLatitude = entity.latitude
-      entity_coord = [eLatitude, eLongitude];
+      entity_coord = [eLatitude, eLongitude]
       newDistance = distance(user_coord, entity_coord)
       if flying_distance == -1 || flying_distance > newDistance then
         flying_distance = newDistance
@@ -54,11 +54,17 @@ class EntitiesController < ApplicationController
   end
 
   def distance loc1, loc2
-    rad_per_deg = Math::PI/180  
-    rkm = 6371                
-    rm = rkm * 1000             
+    puts "loc1"
+    puts loc1[0]
+    puts loc1[1]
+    puts "loc2"
+    puts loc2[0]
+    puts loc2[1]
+    rad_per_deg = Math::PI/180
+    rkm = 6371
+    rm = rkm * 1000
 
-    dlat_rad = (loc2[0]-loc1[0]) * rad_per_deg 
+    dlat_rad = (loc2[0]-loc1[0]) * rad_per_deg
     dlon_rad = (loc2[1]-loc1[1]) * rad_per_deg
 
     lat1_rad, lon1_rad = loc1.map {|i| i * rad_per_deg }
