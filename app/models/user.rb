@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates_presence_of :username, :on => :create
   validates_uniqueness_of :username
 
+  belongs_to :blood_type
+
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt

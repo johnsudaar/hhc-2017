@@ -14,8 +14,12 @@ class UsersController < ApplicationController
 
   def register
     user = User.new(user_params)
+    blood_type = params[:user][:rhesus]
+    bt = BloodType.find_or_create_by(:rhesus => params[:user][:rhesus])
+    user.blood_type = bt
 
     if user.valid?
+      bt.save
       user.save
       render json: user
     else
