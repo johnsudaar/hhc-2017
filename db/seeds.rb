@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Badge.create(title: "First blood", icon: "", annual_threshold: 0, global_threshold: 1)
-Badge.create(title: "Half Blood", icon: "", annual_threshold: 2, global_threshold: 0)
-Badge.create(title: "Full Blood", icon: "", annual_threshold: 4, global_threshold: 0)
-Badge.create(title: "Bloog god", icon: "", annual_threshold: 0, global_threshold: 24)
+Badge.create(title: "Premier Don", icon: "premier-don", annual_threshold: 0, global_threshold: 1)
+Badge.create(title: "Semi maradon", icon: "semi-maradon", annual_threshold: 2, global_threshold: 0)
+Badge.create(title: "Donkishoot", icon: "donkishoot", annual_threshold: 4, global_threshold: 0)
+Badge.create(title: "Maradon", icon: "maradon", annual_threshold: 0, global_threshold: 24)
 
 blood_type = [
 	"AB+","AB-","A+","A-","B+","B-","O+","O-"
@@ -30,7 +30,7 @@ entities.each do | name, country, city, street, post_code, permanent, latitude, 
 	entity = Entity.create(name:name, country:country, city:city, street:street, post_code:post_code, permanent:permanent, longitude:longitude, latitude:latitude)
 	i=1
 	tot=8
-	while i <= tot do 
+	while i <= tot do
 		if entity.permanent then
 			entity.needs << Need.create(percent: 1+Random.rand(60), blood_type_id:i);
 			i+=1
