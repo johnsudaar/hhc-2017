@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   helper_method :user_signed_in?
 
   def current_user
-    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by_id(request.headers["UserId"]) if request.headers["UserId"]
   end
 
   def user_signed_in?

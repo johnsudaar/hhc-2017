@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def me
+    render json: current_user
+  end
   def login
     username = params[:user][:username]
     password = params[:user][:password]
