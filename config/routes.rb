@@ -4,10 +4,7 @@ Rails.application.routes.draw do
 	root "index#index"
 
   post "sign_in" => "users#login"
-  get "sign_in" => "users#sign_in"
   post "sign_up" => "users#register"
-	get "sign_up" => "users#new"
-  delete "sign_out" => "users#sign_out"
 
   get "secret" => "index#secret"
 
