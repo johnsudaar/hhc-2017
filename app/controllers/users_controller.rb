@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       user.save
       render json: user
     else
-      render json: {:error => "Error while processing request"}
+      render json: {:error => "Error while processing request"}, status: 418
    	end
 	end
 
