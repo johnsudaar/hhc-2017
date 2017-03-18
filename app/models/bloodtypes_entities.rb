@@ -1,2 +1,0 @@
-class BloodtypesEntities < ApplicationRecord
-end

@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   post "meeting" => "meetings#create"
 
   resources "badges", only: [:index]
+
+  get "entities/nearest" => "entities#nearest"
+  get "entities/moyenne/:country/:city/:rhesus" => "entities#moyenne"
+
+  resources "entities", only: [:show, :index]
 end
