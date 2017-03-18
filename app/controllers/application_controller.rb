@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::API
   helper_method :current_user
   helper_method :user_signed_in?
+  serialization_scope :view_context
+
+
 
   def current_user
     @current_user ||= User.find_by_id(request.headers["UserId"]) if request.headers["UserId"]

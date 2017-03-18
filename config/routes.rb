@@ -7,7 +7,5 @@ Rails.application.routes.draw do
   post "sign_up" => "users#register"
   get "users/me" => "users#me"
 
-
-
-
+  resources "badges", only: [:index]
 end
