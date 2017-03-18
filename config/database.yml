@@ -75,11 +75,5 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
-  <<: *default
-  database: hhc-2017_production
-  username: hhc-2017
-  password: <%= ENV['HHC-2017_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
