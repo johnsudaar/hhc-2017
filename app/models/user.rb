@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
 
   belongs_to :blood_type
+
+  has_many :meetings
   has_and_belongs_to_many :badges
 
   def encrypt_password

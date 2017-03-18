@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "sign_in" => "users#login"
   post "sign_up" => "users#register"
   get "users/me" => "users#me"
+  post "meeting" => "meetings#create"
 
   resources "badges", only: [:index]
 end
