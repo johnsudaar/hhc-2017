@@ -11,6 +11,15 @@ Badge.create(title: "Half Blood", icon: "", annual_threshold: 2, global_threshol
 Badge.create(title: "Full Blood", icon: "", annual_threshold: 4, global_threshold: 0)
 Badge.create(title: "Bloog god", icon: "", annual_threshold: 0, global_threshold: 24)
 
+blood_type = [
+	"A+", "A-", "AB+", "AB-", "B-", "B+", "O-", "O+"
+]
+
+
+blood_type.each do | rhesus |
+	BloodType.create(rhesus:rhesus)
+end
+
 entities = [
  ["Hopital de Hautepierre", "France", "Strasbourg", " 10 rue Spielmann", "67065"],
  ["Lycée Privé Yunus", "France", "Strasbourg", "14 rue Thomas Mann", "67200"],
