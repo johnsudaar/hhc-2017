@@ -7,6 +7,10 @@ class MeetingsController < ApplicationController
 
     current_user.meetings.create
 
+    b = Badge.find_by icon: "premier-don"
+
+    current_user.badges << b unless current_user.badges.exists? b
+
     render json: {"status": "ok"}
 
   end
